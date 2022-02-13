@@ -14,11 +14,23 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_ApiYandex(object):
     def setupUi(self, ApiYandex):
         ApiYandex.setObjectName("ApiYandex")
-        ApiYandex.resize(450, 450)
+        ApiYandex.resize(450, 500)
         self.map = QtWidgets.QLabel(ApiYandex)
         self.map.setGeometry(QtCore.QRect(0, 0, 450, 450))
         self.map.setText("")
         self.map.setObjectName("map")
+        self.map_type = QtWidgets.QComboBox(ApiYandex)
+        self.map_type.setGeometry(QtCore.QRect(20, 450, 111, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.map_type.setFont(font)
+        self.map_type.setObjectName("map_type")
+        self.map_type.addItem("")
+        self.map_type.addItem("")
+        self.map_type.addItem("")
+        self.do_map_type = QtWidgets.QPushButton(ApiYandex)
+        self.do_map_type.setGeometry(QtCore.QRect(150, 450, 93, 28))
+        self.do_map_type.setObjectName("do_map_type")
 
         self.retranslateUi(ApiYandex)
         QtCore.QMetaObject.connectSlotsByName(ApiYandex)
@@ -26,3 +38,7 @@ class Ui_ApiYandex(object):
     def retranslateUi(self, ApiYandex):
         _translate = QtCore.QCoreApplication.translate
         ApiYandex.setWindowTitle(_translate("ApiYandex", "Form"))
+        self.map_type.setItemText(0, _translate("ApiYandex", "Спутник"))
+        self.map_type.setItemText(1, _translate("ApiYandex", "Гибрид"))
+        self.map_type.setItemText(2, _translate("ApiYandex", "Схема"))
+        self.do_map_type.setText(_translate("ApiYandex", "Поставить"))
