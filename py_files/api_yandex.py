@@ -14,9 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_ApiYandex(object):
     def setupUi(self, ApiYandex):
         ApiYandex.setObjectName("ApiYandex")
-        ApiYandex.resize(673, 546)
+        ApiYandex.resize(450, 450)
         self.map = QtWidgets.QLabel(ApiYandex)
-        self.map.setGeometry(QtCore.QRect(0, 0, 671, 541))
+        self.map.setGeometry(QtCore.QRect(0, 0, 450, 450))
         self.map.setText("")
         self.map.setObjectName("map")
 
