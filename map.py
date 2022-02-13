@@ -21,10 +21,10 @@ class ApiYandex(QWidget, Ui_ApiYandex):
         self.map.setPixmap(self.pixmap)
 
     def keyPressEvent(self, event):
-        if event.key() == Qt.Key_Down:
+        if event.key() == Qt.Key_PageDown:
             self.z -= 1
             self.do_picture()
-        if event.key() == Qt.Key_Up:
+        if event.key() == Qt.Key_PageUp:
             self.z += 1
             self.do_picture()
 
