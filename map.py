@@ -7,10 +7,10 @@ from PyQt5.QtCore import Qt
 
 
 class ApiYandex(QWidget, Ui_ApiYandex):
-    def __init__(self):
+    def __init__(self, coords):
         super().__init__()
         self.setupUi(self)
-        self.coords = [40.692077, 55.614980]
+        self.coords = coords.split(' ')
         self.z = 14
         self.l = 'sat'
         self.response = requests.get(f'https://static-maps.yandex.ru/1.x/?ll='
@@ -77,7 +77,7 @@ class ApiYandex(QWidget, Ui_ApiYandex):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    api = ApiYandex()
+    api = ApiYandex(input())
     api.show()
     sys.exit(app.exec())
 
