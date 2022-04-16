@@ -10,7 +10,9 @@ class ApiYandex(QWidget, Ui_ApiYandex):
     def __init__(self, coords):
         super().__init__()
         self.setupUi(self)
-        self.coords = coords.split(' ')
+        self.coords = coords.split(', ')
+        self.coords = [float(item) for item in self.coords]
+        print(self.coords)
         self.z = 14
         self.l = 'sat'
         self.response = requests.get(f'https://static-maps.yandex.ru/1.x/?ll='
