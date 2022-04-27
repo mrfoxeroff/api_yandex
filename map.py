@@ -53,16 +53,16 @@ class ApiYandex(QWidget, Ui_ApiYandex):
 
     def move_picture(self, button):
         if button == Qt.Key_Up:
-            self.coords[1] += 0.0005
+            self.coords[1] += 0.0005 * (20 - self.z)
             self.do_picture()
         if button == Qt.Key_Down:
-            self.coords[1] -= 0.0005
+            self.coords[1] -= 0.0005 * (20 - self.z)
             self.do_picture()
         if button == Qt.Key_Right:
-            self.coords[0] += 0.0005
+            self.coords[0] += 0.0005 * (20 - self.z)
             self.do_picture()
         if button == Qt.Key_Left:
-            self.coords[0] -= 0.0005
+            self.coords[0] -= 0.0005 * (20 - self.z)
             self.do_picture()
 
     def check_l(self):
